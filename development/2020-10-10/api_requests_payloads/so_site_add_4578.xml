@@ -1,0 +1,99 @@
+<Data xmlns="services.schema.networkapi.jmp.juniper.net">
+  <CustomAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ServiceCustomActionType">
+    <Action>SaveAndDeployNow</Action>
+  </CustomAction>
+  <ServiceResource>
+    <ServiceOrder>
+      <Common>
+        <Name>so_site_add_4578</Name>
+        <Comments>service_order_comment</Comments>
+        <CreatedBy>service_order_user</CreatedBy>
+      </Common>
+      <EnableMVPN>false</EnableMVPN>
+      <ServiceEndPointGroup>
+        <DeviceInfo>
+          <NA>
+            <DeviceName>dist2-testlab</DeviceName>
+            <DeviceID>21561660</DeviceID>
+          </NA>
+        </DeviceInfo>
+        <ServiceEndPoint>
+          <InterfaceName>ge-0/2/2</InterfaceName>
+          <InterfaceStatus>down</InterfaceStatus>
+          <ServiceEndpointConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="L3VPNHSSTATICEndPointConfigParameterOrderType">
+            <UNIDescription>(ZZ) if 113 description</UNIDescription>
+            <EthernetOption>Dot1Q</EthernetOption>
+            <AutoPickUnitID>false</AutoPickUnitID>
+            <UnitID>113</UnitID>
+            <AutoPickVlanID>false</AutoPickVlanID>
+            <VlanId>113</VlanId>
+            <InterfaceIP AutoPick="false">10.10.13.1</InterfaceIP>
+            <IPBlockSize>30</IPBlockSize>
+            <MTU>1522</MTU>
+            <Hub>false</Hub>
+            <SpokeRouteDistinguisher AutoPick="false">1213:23</SpokeRouteDistinguisher>
+          </ServiceEndpointConfiguration>
+          <ServiceTemplates>
+            <ServiceTemplate>
+              <ID>32768006</ID>
+              <Name>schools_if_unitX_v1</Name>
+              <ConfigParams>
+                <Name>Mtu</Name>
+                <Value>1500</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet/mtu</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+              <ConfigParams>
+                <Name>Input</Name>
+                <Value>true</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet/sampling/input</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+              <ConfigParams>
+                <Name>Output</Name>
+                <Value>true</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet/sampling/output</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+              <ConfigParams>
+                <Name>Name</Name>
+                <Value>fd00:10:10:13::1/126</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet6/address[@rowId="1"]/name</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+              <ConfigParams>
+                <Name>Mtu</Name>
+                <Value>1500</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet6/mtu</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+              <ConfigParams>
+                <Name>Input</Name>
+                <Value>false</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet6/sampling/input</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+              <ConfigParams>
+                <Name>Output</Name>
+                <Value>false</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet6/sampling/output</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+            </ServiceTemplate>
+          </ServiceTemplates>
+          <OppType>ADD</OppType>
+        </ServiceEndPoint>
+        <DonotApplyDefaultTemplatesOfSD>true</DonotApplyDefaultTemplatesOfSD>
+        <EnableStitchingPoint>false</EnableStitchingPoint>
+      </ServiceEndPointGroup>
+      <ServiceOrderParameter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="L3VPNConfigParameterOrderType"/>
+      <Reference>
+        <Customer key="950272"/>
+        <ServiceDefinition>
+          <ServiceDefinitionID key="24281137"/>
+        </ServiceDefinition>
+        <Service key="32276486"/>
+      </Reference>
+    </ServiceOrder>
+  </ServiceResource>
+</Data>

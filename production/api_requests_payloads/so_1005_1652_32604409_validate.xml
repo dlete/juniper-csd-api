@@ -1,0 +1,6 @@
+<Data xmlns="services.schema.networkapi.jmp.juniper.net">
+    <CustomAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ServiceOrderCustomActionType">
+        <Action>DeployNow</Action>
+        <ScheduledDateTime>2019-12-11T13:57:28.000Z</ScheduledDateTime>
+    </CustomAction>
+</Data>

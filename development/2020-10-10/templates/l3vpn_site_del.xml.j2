@@ -1,0 +1,49 @@
+<Data
+	xmlns="services.schema.networkapi.jmp.juniper.net">
+	<ServiceResource>
+		<ServiceOrder>
+			<Common>
+		        <Name>{{ admin_info['name'] }}</Name>
+        		<Comments>{{ admin_info['comment'] }}</Comments>
+        		<CreatedBy>{{ admin_info['author'] }}</CreatedBy>
+			</Common>
+			<Reference>
+				<Customer key="{{ associate_with['customer_id'] }}"/>
+        		<ServiceDefinition>
+          			<ServiceDefinitionID key="{{ associate_with['service_definition_id'] }}"/>
+        		</ServiceDefinition>
+        		<Service key="{{ associate_with['service_id'] }}"/>
+			</Reference>
+			<EnableMVPN>false</EnableMVPN>
+			<ServiceOrderParameter
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="L3VPNConfigParameterOrderType">
+				<ASOverride>false</ASOverride>
+			</ServiceOrderParameter>
+			<ServiceEndPointGroup>
+				<DonotApplyDefaultTemplatesOfSD>true</DonotApplyDefaultTemplatesOfSD>
+				<DeviceInfo>
+					<NA>
+						<DeviceName>{{ site_a['pe_hostname'] }}</DeviceName>
+						<DeviceID>{{ site_a['pe_id'] }}</DeviceID>
+					</NA>
+				</DeviceInfo>
+				<ServiceEndPoint>
+				<InterfaceName>{{ site_a['pe_physical_uni'] }}</InterfaceName>
+				<ServiceEndpointID>{{ site_a['service_endpoint_id'] }}</ServiceEndpointID>
+				<ServiceEndpointConfiguration 
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+					xsi:type="VPLSBGPEndPointConfigParameterOrderType">
+				<Hub>false</Hub>
+				<UnitId>{{ site_a['uni_unit_id'] }}</UnitId>
+                <VlanId>{{ site_a['uni_vlan_id'] }}</VlanId>
+				</ServiceEndpointConfiguration>
+				<OppType>DELETE</OppType>
+				</ServiceEndPoint>
+            </ServiceEndPointGroup>
+		</ServiceOrder>
+	</ServiceResource>
+	<CustomAction
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ServiceCustomActionType">
+		<Action>SaveAndDeployNow</Action>
+	</CustomAction>
+</Data>

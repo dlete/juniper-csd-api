@@ -1,0 +1,108 @@
+<Data xmlns="services.schema.networkapi.jmp.juniper.net">
+  <CustomAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ServiceCustomActionType">
+    <Action>{{ admin_info['action']}}</Action>
+  </CustomAction>
+  <ServiceResource>
+    <ServiceOrder>
+      <Common>
+        <Name>{{ admin_info['name'] }}</Name>
+        <Comments>{{ admin_info['comment'] }}</Comments>
+        <CreatedBy>{{ admin_info['author'] }}</CreatedBy>
+      </Common>
+      <EnableMVPN>false</EnableMVPN>
+      <ServiceEndPointGroup>
+        <DeviceInfo>
+          <NA>
+            <DeviceName>{{ site_a['pe_hostname'] }}</DeviceName>
+            <DeviceID>{{ site_a['pe_id'] }}</DeviceID>
+          </NA>
+        </DeviceInfo>
+        <ServiceEndPoint>
+          <InterfaceName>{{ site_a['pe_physical_uni'] }}</InterfaceName>
+          <InterfaceStatus>down</InterfaceStatus>
+          <ServiceEndpointConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="L3VPNFMSTATICEndPointConfigParameterOrderType">
+            <UNIDescription>{{ site_a['uni_description'] }}</UNIDescription>
+            <EthernetOption>Dot1Q</EthernetOption>
+            <AutoPickUnitID>false</AutoPickUnitID>
+            <UnitID>{{ site_a['uni_unit_id'] }}</UnitID>
+            <AutoPickVlanID>false</AutoPickVlanID>
+            <VlanId>{{ site_a['uni_vlan_id'] }}</VlanId>
+            <InterfaceIP AutoPick="false">{{ site_a['uni_ipv4_address'] }}</InterfaceIP>
+            <IPBlockSize>{{ site_a['uni_ipv4_mask'] }}</IPBlockSize>
+            <MTU>1522</MTU>
+            <RouteDistinguisher>1213:4</RouteDistinguisher>
+          </ServiceEndpointConfiguration>
+          <ServiceTemplates>
+            <ServiceTemplate>
+              <ID>32768029</ID>
+              <Name>schools_if_unitX_v1</Name>
+              <ConfigParams>
+                <Name>Mtu</Name>
+                <Value>1500</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet/mtu</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+              <ConfigParams>
+                <Name>Input</Name>
+                <Value>true</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet/sampling/input</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+              <ConfigParams>
+                <Name>Output</Name>
+                <Value>true</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet/sampling/output</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+              <ConfigParams>
+                <Name>Name</Name>
+                <Value>{{ site_a['uni_ipv6_address_and_mask'] }}</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet6/address[@rowId="1"]/name</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+              <ConfigParams>
+                <Name>Mtu</Name>
+                <Value>1500</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet6/mtu</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+              <ConfigParams>
+                <Name>Input</Name>
+                <Value>false</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet6/sampling/input</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+              <ConfigParams>
+                <Name>Output</Name>
+                <Value>false</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet6/sampling/output</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+            </ServiceTemplate>
+            <ServiceTemplate>
+              <ID>32768025</ID>
+              <Name>if_unit_inet_policer_out_v1</Name>
+              <ConfigParams>
+                <Name>Output</Name>
+                <Value>{{ if_unit_policer['policer_out_name'] }}</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet/policer/output</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+            </ServiceTemplate>
+          </ServiceTemplates>
+          <OppType>ADD</OppType>
+        </ServiceEndPoint>
+        <DonotApplyDefaultTemplatesOfSD>true</DonotApplyDefaultTemplatesOfSD>
+        <EnableStitchingPoint>false</EnableStitchingPoint>
+      </ServiceEndPointGroup>
+      <ServiceOrderParameter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="L3VPNConfigParameterOrderType"/>
+      <Reference>
+        <Customer key="{{ associate_with['customer_id'] }}"/>
+        <ServiceDefinition>
+          <ServiceDefinitionID key="{{ associate_with['service_definition_id'] }}"/>
+        </ServiceDefinition>
+        <Service key="{{ associate_with['service_id'] }}"/>
+      </Reference>
+    </ServiceOrder>
+  </ServiceResource>
+</Data>

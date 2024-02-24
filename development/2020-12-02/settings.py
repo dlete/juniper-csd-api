@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+
+# imports, Python core
+import os
+
+# CSD hosts
+CSD_HOST_STAGING = os.getenv('CSD_HOST_STAGING')
+CSD_HOST_PRODUCTION = os.getenv('CSD_HOST_PRODUCTION')
+CSD_HOST = CSD_HOST_STAGING
+
+# CSD API username/password
+CSD_API_USER_STAGING = os.getenv('CSD_API_USER_STAGING')
+CSD_API_PASS_STAGING = os.getenv('CSD_API_PASS_STAGING')
+CSD_API_USER_PRODUCTION = os.getenv('CSD_API_USER_PRODUCTION')
+CSD_API_PASS_PRODUCTION = os.getenv('CSD_API_PASS_PRODUCTION')
+CSD_API_USER = CSD_API_USER_STAGING
+CSD_API_PASS = CSD_API_PASS_STAGING
+
+# Debug
+DEBUG_LEVEL = 'DEBUG'

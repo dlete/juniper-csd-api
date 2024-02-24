@@ -1,0 +1,19 @@
+{
+    'roll_id': '7254', 
+    'service_order_name': 'scoileanna_add_7254_2020-10-15_15-25',
+    'service_order_user': 'service_order_user, daniel through api', 
+    'site_a_pe_hostname': 'dist2-testlab', 
+    'site_a_pe_id': '31424514', 
+    'site_a_pe_interface': 'ge-0/3/9', 
+    'site_a_uni_description': '(SS) roll: 7254, ACME Telecom, CID: ZNKKQIE4', 
+    'site_a_uni_vlan_id': '1254', 
+    'site_a_uni_ipv4_address': '87.32.37.254', 
+    'site_a_uni_ipv4_mask': '31', 
+    'site_a_uni_ipv6_address_and_mask': '2001:0770:e008:5:7254::1/126', 
+    'site_a_route_distinguisher': '1213:4', 
+    'reference_customer_id': '30900306', 
+    'reference_service_definition_id': '24215577', 
+    'reference_service_id': '32473128'
+    }
+
+

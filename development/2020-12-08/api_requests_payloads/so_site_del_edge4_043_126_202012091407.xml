@@ -1,0 +1,49 @@
+<Data
+	xmlns="services.schema.networkapi.jmp.juniper.net">
+	<ServiceResource>
+		<ServiceOrder>
+			<Common>
+		        <Name>so_site_del_edge4_043_126_202012091407</Name>
+        		<Comments>service_order_comment</Comments>
+        		<CreatedBy>dlete-np</CreatedBy>
+			</Common>
+			<Reference>
+				<Customer key="30900306"/>
+        		<ServiceDefinition>
+          			<ServiceDefinitionID key="24215577"/>
+        		</ServiceDefinition>
+        		<Service key="32473128"/>
+			</Reference>
+			<EnableMVPN>false</EnableMVPN>
+			<ServiceOrderParameter
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="L3VPNConfigParameterOrderType">
+				<ASOverride>false</ASOverride>
+			</ServiceOrderParameter>
+			<ServiceEndPointGroup>
+				<DonotApplyDefaultTemplatesOfSD>true</DonotApplyDefaultTemplatesOfSD>
+				<DeviceInfo>
+					<NA>
+						<DeviceName>edge4-testlab</DeviceName>
+						<DeviceID>31424516</DeviceID>
+					</NA>
+				</DeviceInfo>
+				<ServiceEndPoint>
+				<InterfaceName>ge-0/0/43</InterfaceName>
+				<ServiceEndpointID>32702892</ServiceEndpointID>
+				<ServiceEndpointConfiguration 
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+					xsi:type="VPLSBGPEndPointConfigParameterOrderType">
+				<Hub>false</Hub>
+				<UnitId>126</UnitId>
+                <VlanId>126</VlanId>
+				</ServiceEndpointConfiguration>
+				<OppType>DELETE</OppType>
+				</ServiceEndPoint>
+            </ServiceEndPointGroup>
+		</ServiceOrder>
+	</ServiceResource>
+	<CustomAction
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ServiceCustomActionType">
+		<Action>SaveAndDeployNow</Action>
+	</CustomAction>
+</Data>

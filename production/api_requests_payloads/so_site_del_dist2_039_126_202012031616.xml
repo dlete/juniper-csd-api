@@ -1,0 +1,49 @@
+<Data
+	xmlns="services.schema.networkapi.jmp.juniper.net">
+	<ServiceResource>
+		<ServiceOrder>
+			<Common>
+		        <Name>so_site_del_dist2_039_126_202012031616</Name>
+        		<Comments>service_order_comment</Comments>
+        		<CreatedBy>dlete-np</CreatedBy>
+			</Common>
+			<Reference>
+				<Customer key="30900306"/>
+        		<ServiceDefinition>
+          			<ServiceDefinitionID key="24215577"/>
+        		</ServiceDefinition>
+        		<Service key="32473128"/>
+			</Reference>
+			<EnableMVPN>false</EnableMVPN>
+			<ServiceOrderParameter
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="L3VPNConfigParameterOrderType">
+				<ASOverride>false</ASOverride>
+			</ServiceOrderParameter>
+			<ServiceEndPointGroup>
+				<DonotApplyDefaultTemplatesOfSD>true</DonotApplyDefaultTemplatesOfSD>
+				<DeviceInfo>
+					<NA>
+						<DeviceName>dist2-testlab</DeviceName>
+						<DeviceID>31424514</DeviceID>
+					</NA>
+				</DeviceInfo>
+				<ServiceEndPoint>
+				<InterfaceName>ge-0/3/8</InterfaceName>
+				<ServiceEndpointID>32702876</ServiceEndpointID>
+				<ServiceEndpointConfiguration 
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+					xsi:type="VPLSBGPEndPointConfigParameterOrderType">
+				<Hub>false</Hub>
+				<UnitId>125</UnitId>
+                <VlanId>125</VlanId>
+				</ServiceEndpointConfiguration>
+				<OppType>DELETE</OppType>
+				</ServiceEndPoint>
+            </ServiceEndPointGroup>
+		</ServiceOrder>
+	</ServiceResource>
+	<CustomAction
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ServiceCustomActionType">
+		<Action>SaveAndDeployNow</Action>
+	</CustomAction>
+</Data>

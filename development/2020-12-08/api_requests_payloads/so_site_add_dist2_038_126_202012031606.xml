@@ -1,0 +1,108 @@
+<Data xmlns="services.schema.networkapi.jmp.juniper.net">
+  <CustomAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ServiceCustomActionType">
+    <Action>SaveAndValidate</Action>
+  </CustomAction>
+  <ServiceResource>
+    <ServiceOrder>
+      <Common>
+        <Name>so_site_add_dist2_038_126_202012031606</Name>
+        <Comments>service_order_comment, daniel through api</Comments>
+        <CreatedBy>dlete-np</CreatedBy>
+      </Common>
+      <EnableMVPN>false</EnableMVPN>
+      <ServiceEndPointGroup>
+        <DeviceInfo>
+          <NA>
+            <DeviceName>edge4-testlab</DeviceName>
+            <DeviceID>31424516</DeviceID>
+          </NA>
+        </DeviceInfo>
+        <ServiceEndPoint>
+          <InterfaceName>ge-0/0/43</InterfaceName>
+          <InterfaceStatus>down</InterfaceStatus>
+          <ServiceEndpointConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="L3VPNFMSTATICEndPointConfigParameterOrderType">
+            <UNIDescription>(ZUZN) if 126 description</UNIDescription>
+            <EthernetOption>Dot1Q</EthernetOption>
+            <AutoPickUnitID>false</AutoPickUnitID>
+            <UnitID>126</UnitID>
+            <AutoPickVlanID>false</AutoPickVlanID>
+            <VlanId>126</VlanId>
+            <InterfaceIP AutoPick="false">10.10.126.1</InterfaceIP>
+            <IPBlockSize>30</IPBlockSize>
+            <MTU>1522</MTU>
+            <RouteDistinguisher>1213:4</RouteDistinguisher>
+          </ServiceEndpointConfiguration>
+          <ServiceTemplates>
+            <ServiceTemplate>
+              <ID>32768029</ID>
+              <Name>schools_if_unitX_v1</Name>
+              <ConfigParams>
+                <Name>Mtu</Name>
+                <Value>1500</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet/mtu</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+              <ConfigParams>
+                <Name>Input</Name>
+                <Value>true</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet/sampling/input</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+              <ConfigParams>
+                <Name>Output</Name>
+                <Value>true</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet/sampling/output</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+              <ConfigParams>
+                <Name>Name</Name>
+                <Value>fd00:10:10:126::1/126</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet6/address[@rowId="1"]/name</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+              <ConfigParams>
+                <Name>Mtu</Name>
+                <Value>1500</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet6/mtu</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+              <ConfigParams>
+                <Name>Input</Name>
+                <Value>false</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet6/sampling/input</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+              <ConfigParams>
+                <Name>Output</Name>
+                <Value>false</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet6/sampling/output</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+            </ServiceTemplate>
+            <ServiceTemplate>
+              <ID>32768025</ID>
+              <Name>if_unit_inet_policer_out_v1</Name>
+              <ConfigParams>
+                <Name>Output</Name>
+                <Value>test_schools_policer_open_eir</Value>
+                <Xpath>/configuration/cp1/interfaces/interface[@rowId="1"]/unit[@rowId="1"]/family/inet/policer/output</Xpath>
+                <ConfigPageName>cp1</ConfigPageName>
+              </ConfigParams>
+            </ServiceTemplate>
+          </ServiceTemplates>
+          <OppType>ADD</OppType>
+        </ServiceEndPoint>
+        <DonotApplyDefaultTemplatesOfSD>true</DonotApplyDefaultTemplatesOfSD>
+        <EnableStitchingPoint>false</EnableStitchingPoint>
+      </ServiceEndPointGroup>
+      <ServiceOrderParameter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="L3VPNConfigParameterOrderType"/>
+      <Reference>
+        <Customer key="30900306"/>
+        <ServiceDefinition>
+          <ServiceDefinitionID key="24215577"/>
+        </ServiceDefinition>
+        <Service key="32473128"/>
+      </Reference>
+    </ServiceOrder>
+  </ServiceResource>
+</Data>
